@@ -1,0 +1,26 @@
+[1mdiff --git a/app/views/layouts/application.html.erb b/app/views/layouts/application.html.erb[m
+[1mindex 4b6d4b6..7bbddea 100644[m
+[1m--- a/app/views/layouts/application.html.erb[m
+[1m+++ b/app/views/layouts/application.html.erb[m
+[36m@@ -9,6 +9,10 @@[m
+   </head>[m
+ [m
+   <body>[m
+[32m+[m[32m  <div class="container">[m
+[32m+[m[32m   <%= render 'layouts/flash_messages' %>[m
+[32m+[m[41m   [m
+     <%= yield %>[m
+[32m+[m[32m  </div>[m
+   </body>[m
+ </html>[m
+[1mdiff --git a/config/routes.rb b/config/routes.rb[m
+[1mindex 787824f..3d1f28c 100644[m
+[1m--- a/config/routes.rb[m
+[1m+++ b/config/routes.rb[m
+[36m@@ -1,3 +1,5 @@[m
+ Rails.application.routes.draw do[m
+[31m-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html[m
+[32m+[m[32m  root to: 'messages#index'[m
+[32m+[m[41m  [m
+[32m+[m[32m resources :messages[m
+ end[m
